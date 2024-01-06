@@ -1,0 +1,14 @@
+<ul class="list-group">
+    <button class="list-group-item list-group-item-action list-group-item-action list-group-item-dark mb-1" routerLink="/post"><b>Tüm Yazarlar</b></button>
+    
+    <div>
+        <button *ngFor="let user of users"
+            (click)="setCurrentUserPosts(user)"
+            [class]="getCurrentUserClass(user)"  
+            routerLink="/post/user/{{user.id}}">
+            {{user.name}}   
+        </button>
+    </div>
+    
+
+</ul>

@@ -1,0 +1,24 @@
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"><b>Todo Arama</b></label>
+    <input [(ngModel)]="filterText" class="form-control" placeholder="Ara">
+  </div>
+  <div *ngIf="filterText!=''" class="alert alert-warning">{{filterText}} aradiniz.</div>
+  
+  <table class="table table-hover table-striped table-bordered border-success">
+      <thead class="table-success border-success border-2">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">UserID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Completed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos" >
+          <td>{{todo.id}}</td>
+          <td>{{todo.userId}}</td>
+          <td>{{todo.title | uppercase }} </td>
+          <td>{{todo.completed}}</td>
+        </tr>
+      </tbody>
+    </table>

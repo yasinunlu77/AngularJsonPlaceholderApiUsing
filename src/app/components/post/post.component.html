@@ -1,0 +1,26 @@
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label"><b>Post Arama</b></label>
+  <input [(ngModel)]="filterText" class="form-control" placeholder="Ara">
+</div>
+<div *ngIf="filterText!=''" class="alert alert-warning">{{filterText}} aradiniz.</div>
+
+<table class="table table-hover table-striped table-bordered border-primary">
+    <thead class="table-primary border-primary border-2">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">UserID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts | filterPipe:filterText" >
+        <td>{{post.id}}</td>
+        <td>{{post.userId}}</td>
+        <td>{{post.title | uppercase }} </td>
+        <td>{{post.body}}</td>
+        <td><button class="btn btn-primary">Comments</button></td>
+      </tr>
+    </tbody>
+  </table>
