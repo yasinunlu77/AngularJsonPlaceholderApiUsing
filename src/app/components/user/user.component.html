@@ -5,7 +5,8 @@
         <button *ngFor="let user of users"
             (click)="setCurrentUserPosts(user)"
             [class]="getCurrentUserClass(user)"  
-            routerLink="/post/user/{{user.id}}">
+            routerLink="/post/user/{{user.id}}"
+            >
             {{user.name}}   
         </button>
     </div>

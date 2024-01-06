@@ -1,1 +1,18 @@
-<p>comment works!</p>
+<div class="container mt-2">
+    <div class="accordion" id="accordionExample">
+        <div *ngFor="let comment of comments" class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                {{comment.name}}
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              {{comment.body}}<br>
+              Contact: <strong>{{comment.email}}</strong>  
+                
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

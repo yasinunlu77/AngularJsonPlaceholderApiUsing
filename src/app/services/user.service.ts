@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getPosts():Observable<User[]>{   
+  getUsers():Observable<User[]>{   
     return this.httpClient.get<User[]>(this.apiUrl);
     //Burada dönüş tipini Observable yazmamın nedeni => Ana komponentin subscribe olabilmesi için
   }

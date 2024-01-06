@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { PostService } from '../../services/post.service';
@@ -14,7 +14,7 @@ import { FilterPipePipe } from '../../pipes/filter-pipe.pipe';
     templateUrl: './post.component.html',
     styleUrl: './post.component.css',
     providers: [PostService],
-    imports: [HttpClientModule, CommonModule, FormsModule, FilterPipePipe]
+    imports: [HttpClientModule, CommonModule, FormsModule, FilterPipePipe, RouterLink]
 })
 export class PostComponent implements OnInit{
 

@@ -4,6 +4,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
 import { RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -22,11 +23,11 @@ export class UserComponent {
   constructor(private userService:UserService){}
 
   ngOnInit(): void{
-    this.getPosts();
+    this.getUsers();
   }
 
-  getPosts(){
-      this.userService.getPosts().subscribe((response) => {
+  getUsers(){
+      this.userService.getUsers().subscribe((response) => {
         this.users = response;
       });
   }
